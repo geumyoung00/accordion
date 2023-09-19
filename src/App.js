@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Question from "./Question";
 import "./styles.css";
 
 export default function App() {
+  const [selected, setSelected] = useState(null);
+
   return (
     <>
       <h1>Project 2: FAQ/Accordion</h1>
@@ -10,7 +12,14 @@ export default function App() {
         <h2>Frequently Asked Questions</h2>
         <div className="questions">
           {questions.map((el, i) => {
-            return <Question questions={el} key={el.id} />;
+            return (
+              <Question
+                questions={el}
+                key={el.id}
+                selected={selected}
+                setSelected={setSelected}
+              />
+            );
           })}
         </div>
       </div>

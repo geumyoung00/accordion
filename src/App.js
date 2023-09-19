@@ -9,7 +9,9 @@ export default function App() {
       <div className="container">
         <h2>Frequently Asked Questions</h2>
         <div className="questions">
-          <Question />
+          {questions.map((el, i) => {
+            return <Question questions={el} key={el.id} />;
+          })}
         </div>
       </div>
     </>

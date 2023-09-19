@@ -1,13 +1,13 @@
 import React from "react";
 
-const Question = () => {
+const Question = ({ questions }) => {
   return (
     <section>
       <div>
-        <h4>제목</h4>
+        <h4>{questions.title}</h4>
         <button>+</button>
       </div>
-      <p>내용</p>
+      <p>{questions.info}</p>
     </section>
   );
 };
